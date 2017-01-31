@@ -6,6 +6,7 @@ env:
   - SUITE=lint
   - SUITE=check
   - SUITE=test
+  - SUITE=build
 
 install:
   - make install-tools
