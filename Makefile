@@ -30,7 +30,7 @@ check:
 
 .PHONY: test
 test: lint
-	go test -cover -v .
+	go test -cover -v ./...
 
 PACKAGES := \
 	golang.org/x/tools/cmd/goimports \
