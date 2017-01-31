@@ -28,13 +28,16 @@ check:
 		$(GOMETALINTER_REQUIRED_FLAGS) \
 		.
 
+.PHONY: getdeps
+getdeps:
+	$(GOPATH)/bin/glide install
+
 .PHONY: test
-test: lint
-	glide install
+test: lint getdeps
 	go test -cover $(shell glide novendor)
 
 .PHONY: build
-build:
+build: getdeps
 	mkdir -p $(CURDIR)/pkg
 	$(GOPATH)/bin/gox \
 	  -osarch="linux/amd64 darwin/amd64" \
@@ -44,6 +47,7 @@ PACKAGES := \
 	golang.org/x/tools/cmd/goimports \
 	github.com/tools/godep \
 	github.com/alecthomas/gometalinter \
+	github.com/Masterminds/glide \
 	github.com/mitchellh/gox
 
 .PHONY: install-tools
