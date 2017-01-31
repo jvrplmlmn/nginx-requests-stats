@@ -30,7 +30,8 @@ check:
 
 .PHONY: test
 test: lint
-	go test -cover -v ./...
+	glide install
+	go test -cover $(shell glide novendor)
 
 PACKAGES := \
 	golang.org/x/tools/cmd/goimports \
