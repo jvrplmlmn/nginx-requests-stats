@@ -9,7 +9,6 @@ env:
 
 install:
   - make install-tools
-  - curl https://glide.sh/get | sh
 
 script:
   - make ${SUITE}
