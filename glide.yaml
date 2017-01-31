@@ -1,2 +1,4 @@
 package: github.com/jvrplmlmn/nginx-requests-stats
-import: []
+import:
+- package: github.com/satyrius/gonx
+  version: v1.3.0
