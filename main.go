@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/jvrplmlmn/nginx-requests-stats/handlers"
+	h "github.com/jvrplmlmn/nginx-requests-stats/handlers"
 	"github.com/satyrius/gonx"
 )
 
@@ -30,9 +30,9 @@ func main() {
 	parser := gonx.NewParser(format)
 
 	// This endpoint returns a JSON with the version of the application
-	http.Handle("/version", handlers.VersionHandler(version))
+	h.HandleWLogger("version", h.VersionHandler(version))
 	// This endpoint returns a JSON with the number of requests in the last 24h
-	http.Handle("/count", handlers.CountHandler(parser, logFile))
+	h.HandleWLogger("/count", h.CountHandler(parser, logFile))
 	// Serve the endpoints
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 
