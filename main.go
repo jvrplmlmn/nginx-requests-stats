@@ -9,7 +9,7 @@ import (
 	"github.com/satyrius/gonx"
 )
 
-const version = "0.1.0"
+const version = "0.2.0"
 
 var format string
 var logFile string
@@ -24,7 +24,7 @@ func main() {
 	flag.Parse()
 
 	// Always log when the application starts
-	log.Println("Starting 'nginx-requests-stats' app...")
+	log.Printf("Starting 'nginx-requests-stats' app (version: %s)\n", version)
 
 	// Create a parser based on a given format
 	parser := gonx.NewParser(format)
