@@ -2,3 +2,5 @@ package: github.com/jvrplmlmn/nginx-requests-stats
 import:
 - package: github.com/satyrius/gonx
   version: v1.3.0
+- package: github.com/kelseyhightower/envconfig
+  version: v1.3.0

@@ -41,7 +41,7 @@ build: getdeps
 	mkdir -p $(CURDIR)/pkg
 	$(GOPATH)/bin/gox \
 	  -osarch="linux/amd64 darwin/amd64" \
-		-output "pkg/{{.OS}}_{{.Arch}}/$(APPLICATION)"
+		-output "pkg/$(APPLICATION)_{{.OS}}_{{.Arch}}"
 
 PACKAGES := \
 	golang.org/x/tools/cmd/goimports \

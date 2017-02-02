@@ -1,6 +1,8 @@
-hash: 8c68611382e557575ebcfa5867c3043f7f2203685b9e59e688fcfd17cc6ba6b9
-updated: 2017-01-31T21:57:27.840033417+01:00
+hash: fe3eb5dc525020fe7ee002f7421673242d976a9fb76ff0eba00249bd332c5335
+updated: 2017-02-02T15:11:57.360649444+01:00
 imports:
+- name: github.com/kelseyhightower/envconfig
+  version: f611eb38b3875cc3bd991ca91c51d06446afa14c
 - name: github.com/satyrius/gonx
   version: f1c51f19b2b87faac9db82567fa41165c31edc7d
 testImports: []
