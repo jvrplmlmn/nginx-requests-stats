@@ -51,7 +51,7 @@ func main() {
 	parser := gonx.NewParser(format)
 
 	// This endpoint returns a JSON with the version of the application
-	h.HandleWLogger("version", h.VersionHandler(version))
+	h.HandleWLogger("/version", h.VersionHandler(version))
 	// This endpoint returns a JSON with the number of requests in the last 24h
 	h.HandleWLogger("/count", h.CountHandler(parser, logFile))
 	// Serve the endpoints
